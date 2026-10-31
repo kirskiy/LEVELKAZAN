@@ -186,4 +186,4 @@ main,.site-footer{position:relative;z-index:1;}
   });
   qs('#tournament-form').addEventListener('submit',async e=>{e.preventDefault();const f=e.currentTarget,m=qs('.form-message',f),b=qs('[type=submit]',f);m.textContent='Сохраняем…';b.disabled=true;try{const r=await api('/api/tournaments',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(Object.fromEntries(new FormData(f)))});editor.close();await loadTournaments()}catch{m.textContent='Не удалось сохранить турнир. Требуется сервер клуба с доступом организатора.'}finally{b.disabled=false}});
   loadTournaments();
-})();</script></body></html>
+})();</script></body></html> 
